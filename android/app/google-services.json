@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "241792334772",
+    "project_id": "pakistan-food-delivery",
+    "storage_bucket": "pakistan-food-delivery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241792334772:android:5ff26edb9c2079435210e1",
+        "android_client_info": {
+          "package_name": "com.selfmade.food_delivery_and_grocery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241792334772-g4l5ne6hm4a0mqu90affv5jqbnj11s5v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.selfmade.food_delivery_and_grocery",
+            "certificate_hash": "1838a5e92b44c93cedc69e586ce87223ff9327ac"
+          }
+        },
+        {
+          "client_id": "241792334772-osaujb8219pm5c4pf0afvbgc249gq5rs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlly7iOpkYlBvbZ11_kK4AY1NzUGLGjNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241792334772-osaujb8219pm5c4pf0afvbgc249gq5rs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
