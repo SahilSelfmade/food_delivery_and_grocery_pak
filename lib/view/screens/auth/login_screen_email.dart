@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery_and_grocery/constants.dart';
+import 'package:food_delivery_and_grocery/view/screens/auth/login_screen_phone.dart';
 import 'package:food_delivery_and_grocery/view/widgets/text_input.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'register_screen.dart';
 
-
-class LoginScreen extends StatelessWidget {
-  LoginScreen({
+class LoginScreenEMail extends StatelessWidget {
+  LoginScreenEMail({
     Key? key,
   }) : super(key: key);
   final TextEditingController _emailController = TextEditingController();
@@ -21,12 +22,14 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Login\nArea',
-              style: TextStyle(
-                fontSize: 45,
-                fontWeight: FontWeight.w700,
-              ),
+            Text(
+              'Logo\nArea',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.oswald(
+                  textStyle: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 30.0)),
             ),
             const SizedBox(width: 0.0, height: 65),
             Container(
@@ -68,7 +71,7 @@ class LoginScreen extends StatelessWidget {
               child: InkWell(
                 onTap: () {
                   authController.loginUser(
-                      _emailController.text, _passwordController.text); 
+                      _emailController.text, _passwordController.text);
                   print('Login Button Clicked');
                 },
                 child: const Center(
@@ -83,7 +86,7 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 25,
+              height: 35,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -95,13 +98,49 @@ class LoginScreen extends StatelessWidget {
                     fontSize: 20,
                   ),
                 ),
+                const SizedBox(width: 10),
                 InkWell(
                   onTap: () {
-                    Get.offAll(() => SignUpScreen());
+                    Get.to(() => SignUpScreen());
                     print('Register Button Clicked on Login Page');
                   },
                   child: Text(
                     'Register',
+                    style: TextStyle(
+                      color: buttonColor,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'OR',
+              style: TextStyle(
+                color: buttonColor,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Login using Phone Number?',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                ),
+                const SizedBox(width: 10),
+                InkWell(
+                  onTap: () {
+                    Get.to(() => LoginPagePhone());
+                  },
+                  child: Text(
+                    'Login',
                     style: TextStyle(
                       color: buttonColor,
                       fontSize: 20,

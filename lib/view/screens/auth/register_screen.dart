@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_and_grocery/view/screens/auth/login_screen_email.dart';
 import 'package:get/get.dart';
 import 'package:food_delivery_and_grocery/constants.dart';
-import 'package:food_delivery_and_grocery/view/screens/auth/login_screen.dart';
 import 'package:food_delivery_and_grocery/view/widgets/text_input.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({
@@ -25,11 +26,11 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(width: 0.0, height: 65),
               Text(
                 'Logo\nArea',
-                style: TextStyle(
-                  fontSize: 45,
-                  color: buttonColor,
-                  fontWeight: FontWeight.w700,
-                ),
+                 style: GoogleFonts.oswald(
+                  textStyle: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 30.0)),
               ),
               const SizedBox(width: 0.0, height: 65),
               Stack(
@@ -142,7 +143,7 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.offAll(() => LoginScreen());
+                      Get.to(() => LoginScreenEMail());
                       print('Login Button Clicked on Register Page');
                     },
                     child: Text(
@@ -153,8 +154,17 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  
                 ],
-              )
+              ),
+              
+
+
+
+
+
+
+
             ],
           ),
         ),

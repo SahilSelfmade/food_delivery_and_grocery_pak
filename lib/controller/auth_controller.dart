@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:food_delivery_and_grocery/constants.dart';
-import 'package:food_delivery_and_grocery/view/screens/auth/login_screen.dart';
-import 'package:food_delivery_and_grocery/view/screens/auth/register_screen.dart';
+import 'package:food_delivery_and_grocery/view/screens/auth/login_screen_email.dart';
 import 'package:food_delivery_and_grocery/view/screens/home_screen.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -11,6 +10,10 @@ import 'package:food_delivery_and_grocery/model/user.dart' as model;
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
+// PHONE VERIFICATION
+  var isLoading = false.obs;
+  var authStatus = "".obs;
+  late String phoneNumber, verificationID;
 
   //Pick Image
   late Rx<File?> _pickedImage;
@@ -36,6 +39,55 @@ class AuthController extends GetxController {
           'Profile Picture', 'You have successfully selct profile picture');
     }
     _pickedImage = Rx<File?>(File(pickedImage!.path));
+  }
+
+//  Register USer using Phone
+  verifyPhone(String phone) async {
+    await firebaseAuth.verifyPhoneNumber(
+        phoneNumber: phone,
+        timeout: const Duration(
+          seconds: 15,
+        ),
+        verificationCompleted: (PhoneAuthCredential authCredeintial) {
+          if (firebaseAuth.currentUser != null) {
+            isLoading.value = false;
+            print(authCredeintial);
+            authStatus.value = authCredeintial.toString();
+          }
+        },
+        verificationFailed: (FirebaseAuthException authException) {
+          Get.snackbar('SMS Code Info', authException.toString());
+        },
+        codeSent: (String id, [int? resendToken]) {
+          isLoading.value = false;
+          verificationID = id;
+          // print(verificationId);
+          authStatus.value = 'Login Success';
+        },
+        codeAutoRetrievalTimeout: (String id) {
+          verificationID = id;
+        });
+  }
+
+// Verify Phone OTP
+  verifyOTP(String otp) async {
+    isLoading.value = true;
+    try {
+      var phoneCred =
+          await firebaseAuth.signInWithCredential(PhoneAuthProvider.credential(
+        verificationId: verificationID,
+        smsCode: otp,
+      ));
+      if (phoneCred.user != null) {
+        isLoading.value = false;
+        Get.offAll(() => HomeScreen());
+      }
+    } on Exception catch (e) {
+      Get.snackbar(
+        'OTP INFO',
+        e.toString(),
+      );
+    }
   }
 
 // Registering the User
@@ -106,7 +158,9 @@ class AuthController extends GetxController {
 
   _setInitialScreen(User? user) {
     if (user == null) {
-      Get.offAll(() => LoginScreen());
+      Get.offAll(
+        () => LoginScreenEMail(),
+      );
     } else {
       Get.offAll(() => HomeScreen());
     }

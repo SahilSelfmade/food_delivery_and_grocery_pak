@@ -69,11 +69,11 @@ class _HomeBodyState extends State<HomeBody> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
-              const Text(
-                'Popular',
+              Text(
+                'Popular'.toUpperCase(),
                 style: const TextStyle(
                   fontSize: 24,
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               SizedBox(
@@ -94,7 +94,7 @@ class _HomeBodyState extends State<HomeBody> {
           ),
         ),
         SizedBox(
-          height: 20,
+          height: 30,
         ),
         //List of Food & Images
         Container(
@@ -120,11 +120,11 @@ class _HomeBodyState extends State<HomeBody> {
                         width: 120,
                         height: 120,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(5),
                           color: Colors.white,
-                          image: DecorationImage(
+                          image: const DecorationImage(
                             image: NetworkImage(
-                                'https://source.unsplash.com/1600x900/?food'),
+                                'https://source.unsplash.com/1600x900/?food,fruit,vegetables'),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -133,14 +133,14 @@ class _HomeBodyState extends State<HomeBody> {
                       // Text Section
                       Expanded(
                         child: Container(
-                          height: 100,
+                          height: 110,
                           // width: Get.width * 0.65,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.only(
                               topRight: Radius.circular(5),
                               bottomRight: Radius.circular(25),
                             ),
-                            color: Colors.white,
+                            color: Color.fromARGB(255, 220, 220, 220),
                           ),
                           child: Padding(
                             padding: EdgeInsets.only(
@@ -151,12 +151,12 @@ class _HomeBodyState extends State<HomeBody> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: <Widget>[
                                 // const SizedBox(height: 5),
-                                Text(
+                                const Text(
                                   'Food Name',
                                   style: TextStyle(
-                                    fontSize: 24,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.w700,
-                                    color: buttonColor,
+                                    color: Colors.black,
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                 ),

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.selfmade.food_delivery_and_grocery">
    <application
-        android:label="food_delivery_and_grocery"
+        android:label="Zesty"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
