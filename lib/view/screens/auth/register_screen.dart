@@ -26,16 +26,16 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(width: 0.0, height: 65),
               Text(
                 'Logo\nArea',
-                 style: GoogleFonts.oswald(
-                  textStyle: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 30.0)),
+                style: GoogleFonts.oswald(
+                    textStyle: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 30.0)),
               ),
               const SizedBox(width: 0.0, height: 65),
               Stack(
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 64,
                     backgroundColor: Colors.black,
                     backgroundImage: NetworkImage(
@@ -49,7 +49,7 @@ class SignUpScreen extends StatelessWidget {
                         authController.pickImage();
                         print('Icon Button Pressed');
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.add_a_photo,
                         size: 20,
                       ),
@@ -113,7 +113,7 @@ class SignUpScreen extends StatelessWidget {
                       _emailController.text,
                       _passwordController.text,
                       authController.profilePhoto,
-                    ); 
+                    );
                     print('Register Button Clicked');
                   },
                   child: Center(
@@ -134,9 +134,10 @@ class SignUpScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Already have an account?',
-                    style: const TextStyle(
+                    style: TextStyle(
+                      
                       color: Colors.white,
                       fontSize: 20,
                     ),
@@ -154,17 +155,8 @@ class SignUpScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  
                 ],
               ),
-              
-
-
-
-
-
-
-
             ],
           ),
         ),

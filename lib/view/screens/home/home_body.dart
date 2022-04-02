@@ -1,7 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_and_grocery/constants.dart';
-import 'package:get/get.dart';
 
 class HomeBody extends StatefulWidget {
   HomeBody({Key? key}) : super(key: key);
@@ -39,7 +38,7 @@ class _HomeBodyState extends State<HomeBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        SizedBox(
           // color: Colors.red,
           height: 320,
           child: PageView.builder(
@@ -49,7 +48,7 @@ class _HomeBodyState extends State<HomeBody> {
                 return _buildPageItem(index);
               }),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         DotsIndicator(
@@ -61,11 +60,11 @@ class _HomeBodyState extends State<HomeBody> {
             activeColor: buttonColor,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         Container(
-          margin: EdgeInsets.only(left: 30),
+          margin: const EdgeInsets.only(left: 30),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
@@ -76,28 +75,28 @@ class _HomeBodyState extends State<HomeBody> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               const Text(
                 '.',
-                style: const TextStyle(fontSize: 14),
+                style: TextStyle(fontSize: 14),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               const Text(
                 'Food Pairing',
-                style: const TextStyle(fontSize: 14),
+                style: TextStyle(fontSize: 14),
               ),
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         //List of Food & Images
-        Container(
+        SizedBox(
           height: 700,
           child: ListView.builder(
               // shrinkWrap: true,
@@ -105,11 +104,11 @@ class _HomeBodyState extends State<HomeBody> {
               itemCount: 6,
               itemBuilder: (context, index) {
                 return Container(
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     top: 10,
                     bottom: 10,
                   ),
-                  margin: EdgeInsets.only(
+                  margin: const EdgeInsets.only(
                     left: 10,
                     right: 10,
                   ),
@@ -143,7 +142,7 @@ class _HomeBodyState extends State<HomeBody> {
                             color: Color.fromARGB(255, 220, 220, 220),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.only(
+                            padding: const EdgeInsets.only(
                               left: 10,
                             ),
                             child: Column(
@@ -194,7 +193,7 @@ class _HomeBodyState extends State<HomeBody> {
 }
 
 Widget _buildPageItem(int index) {
-  Matrix4 matrix = new Matrix4.identity();
+  Matrix4 matrix = Matrix4.identity();
   if (index == _currPageValue.floor()) {
     var currScale = 1 - (_currPageValue - index) * (1 - _scaleFactor);
     var currTrans = _height * (1 - currScale) / 2;
@@ -225,14 +224,14 @@ Widget _buildPageItem(int index) {
       children: [
         Container(
           height: 220,
-          margin: EdgeInsets.only(
+          margin: const EdgeInsets.only(
             left: 10,
             right: 10,
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             // color: Colors.yellow,
-            image: DecorationImage(
+            image: const DecorationImage(
               fit: BoxFit.cover,
               image: NetworkImage(
                   'https://source.unsplash.com/1600x900/?food,resturant'),
@@ -243,7 +242,7 @@ Widget _buildPageItem(int index) {
           alignment: Alignment.bottomCenter,
           child: Container(
             height: 120,
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               left: 30,
               right: 30,
               bottom: 25,
@@ -251,7 +250,7 @@ Widget _buildPageItem(int index) {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: Colors.white,
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.grey,
                   blurRadius: 2.0,
@@ -270,7 +269,7 @@ Widget _buildPageItem(int index) {
               // ),
             ),
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -282,7 +281,7 @@ Widget _buildPageItem(int index) {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 0.0,
                     height: 10,
                   ),
@@ -298,10 +297,10 @@ Widget _buildPageItem(int index) {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
-                      Text(
+                      const Text(
                         '4.5',
                         style: TextStyle(
                           fontSize: 16,
@@ -309,10 +308,10 @@ Widget _buildPageItem(int index) {
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
-                      Text(
+                      const Text(
                         '1202 Comments',
                         style: TextStyle(
                           fontSize: 16,
@@ -322,7 +321,7 @@ Widget _buildPageItem(int index) {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 0.0,
                     height: 10,
                   ),
@@ -350,18 +349,18 @@ Row _iconAndText(icon, text) {
         icon,
         color: Colors.black,
       ),
-      SizedBox(
+      const SizedBox(
         width: 5,
       ),
       Text(
         text,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w700,
           color: Colors.black,
         ),
       ),
-      SizedBox(
+      const SizedBox(
         width: 15,
       ),
     ],

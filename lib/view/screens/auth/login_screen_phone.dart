@@ -126,7 +126,7 @@ class _LoginPagePhoneState extends State<LoginPagePhone> {
               "Logo\nArea",
               textAlign: TextAlign.center,
               style: GoogleFonts.oswald(
-                  textStyle: TextStyle(
+                  textStyle:const  TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
                       fontSize: 30.0)),
@@ -164,7 +164,7 @@ class _LoginPagePhoneState extends State<LoginPagePhone> {
                   searchBoxDecoration:
                       const InputDecoration(fillColor: Colors.white),
                   autoValidateMode: AutovalidateMode.disabled,
-                  selectorTextStyle: TextStyle(
+                  selectorTextStyle:const  TextStyle(
                     color: Colors.white,
                   ),
                   initialValue: number,

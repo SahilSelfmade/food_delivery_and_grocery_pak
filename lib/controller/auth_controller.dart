@@ -80,7 +80,7 @@ class AuthController extends GetxController {
       ));
       if (phoneCred.user != null) {
         isLoading.value = false;
-        Get.offAll(() => HomeScreen());
+        Get.offAll(() => const HomeScreen());
       }
     } on Exception catch (e) {
       Get.snackbar(
@@ -162,7 +162,7 @@ class AuthController extends GetxController {
         () => LoginScreenEMail(),
       );
     } else {
-      Get.offAll(() => HomeScreen());
+      Get.offAll(() => const HomeScreen());
     }
   }
 }

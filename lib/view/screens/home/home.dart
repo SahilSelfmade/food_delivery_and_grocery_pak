@@ -14,7 +14,7 @@ class MainPage extends StatelessWidget {
             // Top Bar with Search Icon
             Container(
               child: Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +46,7 @@ class MainPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: IconButton(
-                        icon: Icon(Icons.search),
+                        icon: const Icon(Icons.search),
                         onPressed: () {},
                       ),
                     ),

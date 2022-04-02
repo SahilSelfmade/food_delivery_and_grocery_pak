@@ -26,7 +26,7 @@ class LoginScreenEMail extends StatelessWidget {
               'Logo\nArea',
               textAlign: TextAlign.center,
               style: GoogleFonts.oswald(
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
                       fontSize: 30.0)),
@@ -77,7 +77,7 @@ class LoginScreenEMail extends StatelessWidget {
                 child: const Center(
                   child: Text(
                     'LOGIN',
-                    style: const TextStyle(
+                    style:  TextStyle(
                         fontSize: 20,
                         color: Colors.white,
                         fontWeight: FontWeight.w700),
