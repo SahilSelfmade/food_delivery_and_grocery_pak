@@ -6,8 +6,10 @@ class TextInputField extends StatelessWidget {
   final String? labelText;
   final bool isObscure;
   final IconData? icon;
+  final Function(String)? onChanged;
   const TextInputField({
     Key? key,
+    this.onChanged,
     this.controller,
     this.labelText,
     this.isObscure = false,
@@ -18,6 +20,7 @@ class TextInputField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      onChanged: onChanged,
       decoration: InputDecoration(
         labelText: labelText,
         prefixIcon: Icon(icon),

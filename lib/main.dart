@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery_and_grocery/constants.dart';
 import 'package:food_delivery_and_grocery/controller/auth_controller.dart';
-import 'package:food_delivery_and_grocery/view/screens/auth/login_screen_email.dart';
 import 'package:get/get.dart';
 
 void main() async {
@@ -23,10 +22,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Title',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: backgroundColor,
       ),
-      home: LoginScreenEMail(),
+      home: Container(),
     );
   }
 }

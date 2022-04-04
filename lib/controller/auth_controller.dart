@@ -1,12 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:food_delivery_and_grocery/constants.dart';
+import 'package:food_delivery_and_grocery/main.dart';
 import 'package:food_delivery_and_grocery/view/screens/auth/login_screen_email.dart';
 import 'package:food_delivery_and_grocery/view/screens/home_screen.dart';
+import 'package:food_delivery_and_grocery/view/splash/splash_screen.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'package:food_delivery_and_grocery/model/user.dart' as model;
+import 'package:splashscreen/splashscreen.dart';
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
@@ -159,10 +163,58 @@ class AuthController extends GetxController {
   _setInitialScreen(User? user) {
     if (user == null) {
       Get.offAll(
-        () => LoginScreenEMail(),
+        () => SplashScreen(
+          seconds: 5,
+          navigateAfterSeconds: LoginScreenEMail(),
+          loadingText: Text(
+            'Welcome to Zesty'.toUpperCase(),
+            style: TextStyle(
+              color: buttonColor,
+              fontSize: 28,
+            ),
+          ),
+          // title:
+          image: Image.asset(
+            'assets/default.png',
+            height: 200,
+            width: 200,
+            fit: BoxFit.cover,
+          ),
+          backgroundColor: Colors.black,
+
+          styleTextUnderTheLoader: TextStyle(color: buttonColor),
+          photoSize: 100.0,
+          loaderColor: buttonColor,
+        ),
       );
     } else {
-      Get.offAll(() => const HomeScreen());
+      Get.offAll(
+        () =>
+            // SplashScreen(
+            //     seconds: 5,
+            //     navigateAfterSeconds: HomeScreen(),
+            //     loadingText: Text(
+            //       'Welcome to Zesty'.toUpperCase(),
+            //       style: TextStyle(
+            //         color: buttonColor,
+            //         fontSize: 28,
+            //       ),
+            //     ),
+            //     // title:
+            //     image: Image.asset(
+            //       'assets/default.png',
+            //       height: 200,
+            //       width: 200,
+            //       fit: BoxFit.cover,
+            //     ),
+            //     backgroundColor: Colors.black,
+
+            //     styleTextUnderTheLoader: TextStyle(color: buttonColor),
+            //     photoSize: 100.0,
+            //     loaderColor: buttonColor,
+            //   ),
+            const HomeScreen(),
+      );
     }
   }
 }

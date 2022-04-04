@@ -55,7 +55,7 @@ class MainPage extends StatelessWidget {
               ),
             ),
             // Body
-            Expanded(
+            const Expanded(
               child: SingleChildScrollView(
                 child: HomeBody(),
               ),

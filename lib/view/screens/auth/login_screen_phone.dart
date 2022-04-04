@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -253,3 +255,4 @@ class _LoginPagePhoneState extends State<LoginPagePhone> {
     });
   }
 }
+

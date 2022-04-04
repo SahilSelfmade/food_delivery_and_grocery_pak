@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_and_grocery/constants.dart';
 
 class HomeBody extends StatefulWidget {
-  HomeBody({Key? key}) : super(key: key);
+  const HomeBody({Key? key}) : super(key: key);
 
   @override
   State<HomeBody> createState() => _HomeBodyState();

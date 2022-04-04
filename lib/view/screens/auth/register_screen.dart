@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:food_delivery_and_grocery/view/screens/auth/login_screen_email.dart';
 import 'package:get/get.dart';
